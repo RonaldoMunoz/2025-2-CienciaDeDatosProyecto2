@@ -1,0 +1,10 @@
+# 1. Core Data Handling and Numerical Operations
+pandas       # Para cargar y manipular el dataset [cite: 12]
+numpy        # Para operaciones numéricas (base de pandas y sklearn)
+
+# 2. Visualization (Fase 1)
+matplotlib   # Para gráficos exploratorios básicos [cite: 13]
+seaborn      # Para visualizaciones estadísticas avanzadas (heatmaps, boxplots) [cite: 13]
+
+# 3. Machine Learning (Fase 2 y 3)
+scikit-learn
