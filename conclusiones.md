@@ -239,3 +239,41 @@ Red Neuronal (MLP)	0.877	Buen ajuste, pero podría mejorarse con tuning
   - Regularización: usar alpha=0.001 para evitar sobreajuste.
 
  - Normalización más precisa, Aunque ya escalaste tus variables, verifica que la media esté exactamente en 0 y la varianza en 1 (usa StandardScaler() correctamente antes del entrenamiento).
+
+ ## 📊 Comparación de Modelos de Regresión
+
+| Modelo | MAE ↓ | RMSE ↓ | MSE ↓ | R² ↑ | Interpretación |
+|:--------|:-------:|:--------:|:-------:|:------:|:---------------|
+| **Regresión Lineal** | 0.1903 | 0.2490 | 0.0620 | 0.6029 | Modelo base, solo capta relaciones lineales simples. |
+| **Random Forest** | 0.0852 | 0.1196 | 0.0143 | 0.9084 | Excelente desempeño, capta relaciones no lineales y patrones complejos. |
+| **Red Neuronal** | — | √0.0144 ≈ **0.1200** | 0.0144 | 0.9078 | Rendimiento muy similar a Random Forest, pero ligeramente menor. |
+
+---
+
+## 📈 Análisis Comparativo
+
+1. **Precisión (MAE y RMSE):**
+   - El **Random Forest** tiene los valores de error más bajos (**MAE = 0.0852**, **RMSE = 0.1196**), lo que indica que sus predicciones se acercan más a los valores reales.
+   - La **Red Neuronal** muestra un rendimiento casi idéntico (**RMSE ≈ 0.1200**), lo que confirma su capacidad para capturar relaciones no lineales.
+   - La **Regresión Lineal** presenta un error significativamente mayor, evidenciando que el problema **no es puramente lineal**.
+
+2. **Capacidad explicativa (R²):**
+   - Tanto **Random Forest (0.9084)** como la **Red Neuronal (0.9078)** explican más del **90% de la variabilidad** en los datos.
+   - La **Regresión Lineal (0.6029)** solo explica el 60%, quedando como modelo de referencia o línea base.
+
+3. **Comportamiento general:**
+   - El **Random Forest** ofrece un **equilibrio excelente** entre precisión, estabilidad y facilidad de entrenamiento.
+   - La **Red Neuronal** logra un rendimiento competitivo, aunque requiere mayor ajuste y tiempo de entrenamiento.
+   - La **Regresión Lineal** es útil para interpretación y análisis de coeficientes, pero no para máxima precisión predictiva.
+
+---
+
+## 🧠 Conclusión General
+
+> Tras la evaluación de los tres modelos de regresión sobre el dataset de precios de aguacates, se concluye que el **Random Forest** es el modelo con **mejor desempeño global**, alcanzando un **R² de 0.9084**, un **MAE de 0.0852** y un **RMSE de 0.1196**.  
+> 
+> Esto indica que el modelo explica más del **90% de la variabilidad** en los precios promedio con errores bajos y consistentes.  
+> 
+> La **Red Neuronal** obtuvo resultados casi equivalentes (R² = 0.9078), mientras que la **Regresión Lineal (R² = 0.6029)** mostró un rendimiento inferior al no capturar las relaciones no lineales del problema.  
+> 
+> En conclusión, el **Random Forest** se posiciona como el modelo más adecuado por su **alta precisión, robustez y buena capacidad de generalización**, sin requerir ajustes tan complejos como las redes neuronales.
